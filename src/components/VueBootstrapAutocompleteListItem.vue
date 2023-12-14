@@ -6,7 +6,7 @@
     @keydown.up.prevent
     @keyup.enter="$parent.hitActiveListItem($event)"
     @keyup.down="$parent.selectNextListItem($event)"
-    @keyup.up="$parent.selectPreviousListItem($event)"
+    @keyup.up="console.log($parent); $parent.selectPreviousListItem($event)"
     @blur="processFocusOut"
     tabindex="0"
     href="#"

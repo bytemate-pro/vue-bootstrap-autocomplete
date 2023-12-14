@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+// import {  } from 'vitest'
 import VueBootstrapAutocomplete from '@/components/VueBootstrapAutocomplete.vue'
 import VueBootstrapAutocompleteList from '@/components/VueBootstrapAutocompleteList.vue'
 
@@ -16,7 +17,7 @@ describe('VueBootstrapAutocomplete', () => {
 
   beforeEach(() => {
     wrapper = mount(VueBootstrapAutocomplete, {
-      propsData: {
+      props: {
         data: demoData
       }
     })
@@ -36,7 +37,7 @@ describe('VueBootstrapAutocomplete', () => {
 
   it('Defaults the screenReaderTextSerializer to the text for arrays', () => {
     wrapper = mount(VueBootstrapAutocomplete, {
-      propsData: {
+      props: {
         data: ['Canada', 'CA']
       }
     })
@@ -46,7 +47,7 @@ describe('VueBootstrapAutocomplete', () => {
 
   it('Defaults the screenReaderTextSerializer to the value of the serializer', () => {
     wrapper = mount(VueBootstrapAutocomplete, {
-      propsData: {
+      props: {
         data: [{
           name: 'Canada',
           code: 'CA'
@@ -62,7 +63,7 @@ describe('VueBootstrapAutocomplete', () => {
 
   it('Uses a custom screenReaderTextSerializer properly', () => {
     wrapper = mount(VueBootstrapAutocomplete, {
-      propsData: {
+      props: {
         data: [{
           name: 'Canada',
           screenReaderText: 'Canada button',
@@ -80,7 +81,7 @@ describe('VueBootstrapAutocomplete', () => {
 
   it('Uses a custom serializer properly', () => {
     wrapper = mount(VueBootstrapAutocomplete, {
-      propsData: {
+      props: {
         data: [{
           name: 'Canada',
           code: 'CA'
@@ -96,7 +97,7 @@ describe('VueBootstrapAutocomplete', () => {
 
   it('Allows for a name to be provided for the input', () => {
     wrapper = mount(VueBootstrapAutocomplete, {
-      propsData: {
+      props: {
         data: demoData,
         inputName: 'name-is-provided-for-this-input'
       }
@@ -424,7 +425,7 @@ describe('VueBootstrapAutocomplete', () => {
       expect(child.text()).toBe('No results found')
     });
 
-    it('Shows the "No results found" message when the noResultsInfo slot has been set and there is no data', async () => {
+    it.only('Shows the "No results found" message when the noResultsInfo slot has been set and there is no data', async () => {
       wrapper = mount({
         components: {
           VueBootstrapAutocomplete
@@ -457,7 +458,7 @@ describe('VueBootstrapAutocomplete', () => {
       await wrapper.vm.$nextTick()
       expect(child.isVisible()).toBe(true)
       expect(slot.isVisible()).toBe(true)
-      expect(wrapper.vm.$data.query).toBe('Cadana')
+      expect(wrapper.vm.$data.query).toBe('Cadana') // wtf?
       expect(slot.text()).toBe('No results found')
       expect(child.text()).toBe('No results found')
     });

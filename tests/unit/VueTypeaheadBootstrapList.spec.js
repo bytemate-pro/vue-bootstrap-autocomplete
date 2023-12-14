@@ -35,7 +35,7 @@ describe('VueBootstrapTypeaheadList', () => {
 
   beforeEach(() => {
     wrapper = mount(VueBootstrapAutocompleteList, {
-      propsData: {
+      props: {
         data: demoData,
         vbtUniqueId: 123456789
       }

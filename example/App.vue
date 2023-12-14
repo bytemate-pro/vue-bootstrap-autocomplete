@@ -6,6 +6,7 @@
       v-model="variant"
       placeholder="Choose a language"
       showOnFocus
+      noResultsInfo="No results"
       :serializer="c => c.name"
     />
   </div>

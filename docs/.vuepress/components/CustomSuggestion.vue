@@ -17,7 +17,7 @@
       :disabledValues="(selecteduser ? [selecteduser.login] : [])"
       @input="lookupUser"
     >
-      <template slot="suggestion" slot-scope="{ data, htmlText }">
+      <template v-slot:[suggestion]="{ data, htmlText }">
         <div class="d-flex align-items-center">
           <img
             class="rounded-circle"
@@ -81,4 +81,3 @@
     color: #585656;
   }
 </style>
-
