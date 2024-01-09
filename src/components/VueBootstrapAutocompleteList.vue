@@ -1,6 +1,7 @@
 <template>
-  <component :is="`ul`" class="list-group shadow" ref="suggestionList">
+  <ul class="list-group shadow" ref="suggestionList">
     <vue-bootstrap-autocomplete-list-item
+      v-bind="$attrs"
       v-for="(item, id) in matchedItems"
       :key="id"
       :active="isListItemActive(id)"
@@ -17,7 +18,6 @@
       :background-variant-resolver="backgroundVariantResolver"
       :text-variant="textVariant"
       @click="handleHit(item, $event)"
-      v-bind="$attrs"
     >
       <template
         v-if="$slots.suggestion"
@@ -41,7 +41,7 @@
         {{ noResultsInfo }}
       </template>
     </li>
-  </component>
+  </ul>
 </template>
 
 <script>
@@ -64,6 +64,8 @@ function escapeRegExp(str) {
 }
 
 export default {
+  compatConfig: { MODE: 3, ATTR_FALSE_VALUE: false },
+
   name: 'VueBootstrapAutocompleteList',
 
   components: {

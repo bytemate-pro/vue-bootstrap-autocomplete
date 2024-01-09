@@ -6,7 +6,7 @@
     @keydown.up.prevent
     @keyup.enter="$parent.hitActiveListItem($event)"
     @keyup.down="$parent.selectNextListItem($event)"
-    @keyup.up="console.log($parent); $parent.selectPreviousListItem($event)"
+    @keyup.up="console.log('parent', $parent); $parent.selectPreviousListItem($event)"
     @blur="processFocusOut"
     tabindex="0"
     href="#"
@@ -23,6 +23,8 @@
 
 <script>
 export default {
+  compatConfig: { MODE: 3, ATTR_FALSE_VALUE: false },
+
   name: 'VueBootstrapAutocompleteListItem',
 
   props: {

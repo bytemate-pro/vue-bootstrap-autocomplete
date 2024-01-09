@@ -13,7 +13,7 @@
 
 <script>
   import 'bootstrap-vue/dist/bootstrap-vue.css'
-  import VueBootstrapAutocomplete from "../../../src/components/VueBootstrapAutocomplete";
+  import VueBootstrapAutocomplete from "../../../src/components/VueBootstrapAutocomplete.vue";
 
   export default {
     name: "HomePageDemo",

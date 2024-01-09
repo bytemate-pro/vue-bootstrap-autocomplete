@@ -425,7 +425,7 @@ describe('VueBootstrapAutocomplete', () => {
       expect(child.text()).toBe('No results found')
     });
 
-    it.only('Shows the "No results found" message when the noResultsInfo slot has been set and there is no data', async () => {
+    it('Shows the "No results found" message when the noResultsInfo slot has been set and there is no data', async () => {
       wrapper = mount({
         components: {
           VueBootstrapAutocomplete

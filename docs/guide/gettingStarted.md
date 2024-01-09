@@ -17,12 +17,10 @@ import VueBootstrapAutocomplete from 'vue-bootstrap-autocomplete';
 // Required dependency of bootstrap css/scss files
 import 'bootstrap/scss/bootstrap.scss';
 
-// Global registration
-Vue.component('vue-bootstrap-autocomplete', VueBootstrapAutocomplete)
+// Component registration
+app.component('vue-bootstrap-autocomplete', VueBootstrapAutocomplete)
 
 // or
-
-// Local Registration
 export default {
   components: {
     VueBootstrapAutocomplete

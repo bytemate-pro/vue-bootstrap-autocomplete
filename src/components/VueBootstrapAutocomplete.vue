@@ -85,10 +85,11 @@
 
 <script>
 import VueBootstrapAutocompleteList from './VueBootstrapAutocompleteList.vue'
-import ResizeObserver from 'resize-observer-polyfill'
-import mitt from 'mitt'
+import { ResizeObserver } from '@juggle/resize-observer'
 
 export default {
+  compatConfig: { MODE: 3, ATTR_FALSE_VALUE: false },
+
   name: 'VueBootstrapAutocomplete',
 
   components: {
@@ -314,6 +315,7 @@ export default {
   },
 
   mounted() {
+    console.log(this.$refs)
     this.$_ro = new ResizeObserver((e) => {
       this.resizeList(this.$refs.input)
     })
@@ -342,7 +344,7 @@ export default {
   overflow-y: auto;
   z-index: 999;
 }
-.vbt-autocomplete-list >>> .vbt-matched-text {
+.vbt-autocomplete-list :deep(.vbt-matched-text) {
   font-weight: bold;
 }
 </style>

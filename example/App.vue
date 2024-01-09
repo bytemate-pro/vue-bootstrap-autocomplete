@@ -8,6 +8,7 @@
       showOnFocus
       noResultsInfo="No results"
       :serializer="c => c.name"
+      @hit="variant = $event.code"
     />
   </div>
 </template>
